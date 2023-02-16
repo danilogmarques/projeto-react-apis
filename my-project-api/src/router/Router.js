@@ -10,11 +10,12 @@ const  Router = () => {
             <Routes>
                 <Route index path="/" element={<PokemonsListPage/>}/>
                 <Route path={"/detalhes"} element={<PokemonDetailPage/>}/>
-                <Route path={"/lista"} element={<PokedexPage/>}/>
+                <Route path={"/pokedex"} element={<PokedexPage/>}/>
 
             </Routes>
         </BrowserRouter>
     )
 };
+
 
 export default Router ;

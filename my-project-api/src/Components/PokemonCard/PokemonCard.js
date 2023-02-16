@@ -1,18 +1,25 @@
-import { Container, Detalhes, Capturar, Titulo, Numero, Poison, Glass } from "./pokemonStyle";
+import { useNavigate } from "react-router-dom";
+import { Container, Detalhes, Capturar, Titulo, Numero, Poison, Glass, Pokemon } from "./pokemonStyle";
+import { goToDetailsPage } from "../../router/Codinator";
 
+export function PokemonCard({name}) {
 
-export function PokemonCard(){
+    const navigate = useNavigate();
     
-    
 
-    return(
-        <Container>
-            <Numero>#01</Numero>
-            <Titulo>Poke Card</Titulo>
-            <Glass>Glass</Glass>
-            <Poison>Poison</Poison>
-            <Capturar>Capturar</Capturar>
-            <Detalhes>Detalhes</Detalhes>
-        </Container>
+
+
+    return (
+        
+            <Container>
+                <Titulo>{name}</Titulo>
+                <Numero>#01</Numero>
+                <Glass>Glass</Glass>
+                <Poison>Poison</Poison>
+                <Detalhes onClick={()=>{goToDetailsPage(navigate)}}>Detalhes</Detalhes>
+                <Pokemon>Imagem</Pokemon>
+                <Capturar>Capturar</Capturar>
+            </Container>
+        
     )
 };
