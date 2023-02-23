@@ -1,39 +1,64 @@
 import { GlobalContext } from "./GlobalContext";
 import axios from 'axios';
 import { useEffect, useState } from "react";
+import { BASE_URL } from "../Constantes/url";
 
 
 export const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([]);
-   
-
-    useEffect(() => {
-        
-        getPokemons();
-    },[]);
-
-    const getPokemons = () => {
-        const endpoints = [];
-        for (let i = 1; i < 31; i++ ) {
-            endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
-        }
-        console.log(endpoints);
-        const response = axios.all(endpoints.map((endpoints) => axios.get(endpoints)))
-        .then((response) => setPokemons(response))
-        .catch((erro)=>{
-            console.log(erro.response)
-        })
-    };
+    const [pokedex, setPokedex] = useState([]);
 
     
-
+    
+    
+    useEffect(() => {
+      
+      getPokemons();
+    },[]);
+    
+    const getPokemons = async () => {
+      try {
+        const response = await axios.get(BASE_URL);
+        setPokelist(response.data.results);
+      } catch (error) {
+        console.log(error.responde);
+      }
+    };
+    
+    
+    const addToPokedex = (pokemonToAdd) => {
+        const isAlreadyOnPokedex = pokedex.find(
+          (pokemonInPokedex) => pokemonInPokedex.name === pokemonToAdd.name
+        );
+    
+        if (!isAlreadyOnPokedex) {
+          const newPokedex = [...pokedex, pokemonToAdd];
+          setPokedex(newPokedex);
+        }
+      };
+    
+      const removeFromPokedex = (pokemonToRemove) => {
+        const newPokedex = pokedex.filter(
+          (pokemonInPokedex) => pokemonInPokedex.name !== pokemonToRemove.name
+        );
+    
+        setPokedex(newPokedex);
+      };
+    
+    
+    
     const data = {
         pokemons,
-        // pokelist,
+        pokedex,
+        addToPokedex,
+        removeFromPokedex,
+        pokelist
         // addToPokedex,
         // pokedex
-
+        
     }
+
+    console.log(pokedex)
 
     
     return(
