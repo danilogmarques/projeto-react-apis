@@ -34,6 +34,7 @@ export const Capturar = styled.button`
     width: 146px;
     height: 38px;
     border-radius: 8px;
+    z-index: 2;
 
     
 

@@ -1,31 +1,28 @@
 import { Header } from "../../Components/Header/Header"
 import { PokemonCard } from "../../Components/PokemonCard/PokemonCard"
-// import axios from 'axios';
 // import { useEffect, useState } from "react";
 import { Pai } from './pokemonsListStyle'
 import { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 
+ 
 
 
 export function PokemonsListPage() {
 
     const context = useContext(GlobalContext);
 
-    console.log(context);
 
-    const { pokemons } = context;
-
-
+    const { pokemons} = context;
 
     
-   
-
     const cardScreen = pokemons.map((pokemon)=>{
         return(
             <PokemonCard 
+            key={pokemon.url}
             name={pokemon.data.name} 
-            image={pokemon.data.sprites.front_default} number={pokemon.data.order} 
+            // image={pokemon.data.sprites.front_default} 
+            number={pokemon.data.order} 
             />
         )
     });
@@ -41,6 +38,14 @@ export function PokemonsListPage() {
     </>
     )
 };
+
+    
+
+
+
+    
+   
+
     
 
     // const getPokemons = async () => {

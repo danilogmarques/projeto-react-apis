@@ -9,20 +9,37 @@ export  function PokedexPage() {
 
     const context = useContext(GlobalContext);
 
-    console.log(context);
+    const { pokedex } = context;
+
+    console.log(pokedex);
+
+
 
     
 
 
-
+    const cardScreen = pokedex.map((pokedex)=>{
     return ( 
-        <div>   
-            <header>
-                {/* <h1>Meus Pokémons</h1> */}
-                <Header />
-                <PokemonCard />
-            </header>
-        </div>
+        
+                <PokemonCard
+                 key={pokedex.data.url}
+                 name={pokedex.data.name} 
+                 image={pokedex.data.sprites.front_default} 
+                 number={pokedex.data.order} 
+                />
+            
 
+    )
+});
+
+return (
+    <div>
+        <Header />
+        <main>
+            {cardScreen}    
+
+        </main>
+        
+    </div>
     )
 };
