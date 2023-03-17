@@ -5,9 +5,9 @@ export const goToPokedexPage = (navigate, set) => {
     set(2);
 };
     
-export const goToDetailsPage = (navigate, set) => {
-    navigate('/detalhes');
-    set(3);
+export const goToDetailsPage = (navigate, id) => {
+    navigate(`/detalhes/${id}`);
+    
 };
 
 

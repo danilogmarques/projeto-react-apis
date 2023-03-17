@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { Header } from "../../Components/Header/Header";
 import { PokemonCard } from "../../Components/PokemonCard/PokemonCard";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import { useParams } from "react-router-dom";
 
 
 export  function PokedexPage() {
@@ -11,21 +12,17 @@ export  function PokedexPage() {
 
     const { pokedex } = context;
 
-    console.log(pokedex);
+    const {id} = useParams();
 
-
-
-    
-
-
-    const cardScreen = pokedex.map((pokedex)=>{
+    const cardScreen = pokedex.map((pokemon)=>{
     return ( 
         
                 <PokemonCard
-                 key={pokedex.data.url}
-                 name={pokedex.data.name} 
-                 image={pokedex.data.sprites.front_default} 
-                 number={pokedex.data.order} 
+                 name={pokemon.name} 
+                 image={pokemon.image} 
+                 number={pokemon.number} 
+                 id={pokemon.id}
+                
                 />
             
 

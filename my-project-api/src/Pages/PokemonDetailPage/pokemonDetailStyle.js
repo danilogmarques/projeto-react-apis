@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Fundo = styled.div`
         position: relative;
-        width: 1440px;
-        height: 2455px;
+        width: 100vw;
+        height: 100vh;
         background-color: #5E5E5E;
 `;
 
 
 export const Corpo = styled.div`
-    position: absolute;
+    position: relative;
     width: 1389.14px;
     height: 663px;
     left: 0px;
@@ -182,3 +182,7 @@ export const SecondCard = styled.div`
     border: 2px solid #FFFFFF;
     border-radius: 8px;    
 `;
+
+export const Image = styled.img`
+    width: 40vh;
+`

@@ -13,19 +13,23 @@ export function PokemonsListPage() {
     const context = useContext(GlobalContext);
 
 
-    const { pokemons} = context;
+    const { pokemons } = context;
 
     
     const cardScreen = pokemons.map((pokemon)=>{
         return(
             <PokemonCard 
-            key={pokemon.url}
-            name={pokemon.data.name} 
-            // image={pokemon.data.sprites.front_default} 
+            key={pokemon.id}
+            id={pokemon.data.id}
+            name={pokemon.data.name}
+            url={pokemon.request.responseURL}
+            type1={pokemon.data.types[0].type.name}
+            type2={pokemon.data.types[0].type.name}
+            image={pokemon.data.sprites.front_default} 
             number={pokemon.data.order} 
             />
         )
-    });
+    })
 
     
 

@@ -62,7 +62,7 @@ export const Detalhes = styled.button`
     text-decoration-line: underline;
 
     color: black;
-    background-color: green;
+    background-color: ${(props)=>props.color};
 
     
 `;
@@ -137,10 +137,12 @@ export const Poison = styled.div`
 
 export const Pokemon = styled.img`
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     left: 280px;
-    top: 0px;
+    top: -100px;
+    /* z-index: 3; */
+    object-fit: cover;
 `;
     
 
