@@ -27,6 +27,7 @@ export function PokemonsListPage() {
             type2={pokemon.data.types[0].type.name}
             image={pokemon.data.sprites.front_default} 
             number={pokemon.data.order} 
+            // cardcolor={colorsCard(pokemon.type[0])}
             />
         )
     })

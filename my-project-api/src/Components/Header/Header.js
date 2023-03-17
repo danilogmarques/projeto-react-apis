@@ -8,7 +8,7 @@ import { useContext } from "react";
 
 
 
-export function Header(name) {
+export function Header() {
 
     const context = useContext(GlobalContext);
 

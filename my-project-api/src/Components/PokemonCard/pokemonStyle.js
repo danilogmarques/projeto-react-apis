@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const Pai = styled.div`
         /* position: relative;
         width: 100%;
@@ -62,7 +63,7 @@ export const Detalhes = styled.button`
     text-decoration-line: underline;
 
     color: black;
-    background-color: ${(props)=>props.color};
+    background-color: #FFFFFF;
 
     
 `;
@@ -137,9 +138,9 @@ export const Poison = styled.div`
 
 export const Pokemon = styled.img`
     position: absolute;
-    width: 200px;
-    height: 200px;
-    left: 280px;
+    width: 300px;
+    height: 300px;
+    left: 200px;
     top: -100px;
     /* z-index: 3; */
     object-fit: cover;

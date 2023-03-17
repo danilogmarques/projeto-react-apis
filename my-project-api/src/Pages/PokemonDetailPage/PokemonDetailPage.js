@@ -33,7 +33,7 @@ export function PokemonDetailPage() {
     },[]);
 
     
-    const getPokemons = () => {
+    const getPokemons = async() => {
         const endpoints = [];
         {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${id}/`);
@@ -76,23 +76,30 @@ export function PokemonDetailPage() {
                         <Image alt={pokemon.data.name} src={pokemon.data.sprites.back_default}/>
                     </SecondCard>
 
-                    <Number>#01</Number>
+                    <Number>{pokemon.data.order}</Number>
                     <Name>{pokemon.data.name}</Name>
-                    <Poison>Poison</Poison>
-                    <Glass>Glass</Glass>
+                    <Poison>{pokemon.data.types[0].type.name}</Poison>
+                    {/* <Glass>{pokemon.data.types[1].type.name}</Glass> */}
 
                     <Status>
-                        <div>
+                        <div >
                             <h1>Base stats</h1>
+                            <p>HP {pokemon.data.stats[0].base_stat}</p>
+                            <p>Attack {pokemon.data.stats[1].base_stat}</p>
+                            <p>Defense {pokemon.data.stats[2].base_stat}</p>
+                            <p>Sp.Atk {pokemon.data.stats[3].base_stat}</p>
+                            <p>Sp.Def {pokemon.data.stats[4].base_stat}</p>
+                            <p>Speed {pokemon.data.stats[5].base_stat}</p>
+                            <p>Total</p>
                         </div>
                     </Status>
 
                     <Moves>
                         <h2>Moves:</h2>
-                        <Itens><Text>Razor Wind</Text></Itens>
-                        <Itens><Text>Razor Wind</Text></Itens>
-                        <Itens><Text>Razor Wind</Text></Itens>
-                        <Itens><Text>Razor Wind</Text></Itens>
+                        <Text>{pokemon.data.moves[0].move.name}</Text>
+                        <Text>{pokemon.data.moves[1].move.name}</Text>
+                        <Text>{pokemon.data.moves[2].move.name}</Text>
+                        <Text>{pokemon.data.moves[3].move.name}</Text>
                     </Moves>
                 </Corpo>
                 ))}
