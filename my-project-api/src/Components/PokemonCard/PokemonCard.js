@@ -10,7 +10,7 @@ import { useContext } from "react";
 
 
 
-export function PokemonCard({name, number, image, url, type1, type2, id, cardcolor}) {
+export function PokemonCard({name, number, image, url, type1, colorPokemon, id}) {
 
     // const [card, setCard] = useState(1)
     
@@ -22,18 +22,19 @@ export function PokemonCard({name, number, image, url, type1, type2, id, cardcol
     const { addToPokedex, removeFromPokedex } = context;
 
     const location = useLocation()
-  
+
+   
     
 
 
 
     return (
 
-        <Container color={cardcolor}>
+        <Container color={colorPokemon}>
             <Titulo>{name}</Titulo>
             <Numero>{number}</Numero>
             <Glass>{type1}</Glass>
-            <Poison>{type2}</Poison>
+            <Poison>{type1}</Poison>
             <Detalhes onClick={() => { goToDetailsPage(navigate, id, url) }}>Detalhes</Detalhes>
             <Pokemon alt={name} src={image} />
             <div>

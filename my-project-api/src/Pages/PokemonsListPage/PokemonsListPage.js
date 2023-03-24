@@ -4,6 +4,8 @@ import { PokemonCard } from "../../Components/PokemonCard/PokemonCard"
 import { Pai } from './pokemonsListStyle'
 import { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
+import { colorsCard } from "../../utils/ReturnCardColor";
+
 
  
 
@@ -15,18 +17,23 @@ export function PokemonsListPage() {
 
     const { pokemons } = context;
 
+   
+  
+
     
-    const cardScreen = pokemons.map((pokemon)=>{
+    const cardScreen = pokemons.map((pokemon, index)=>{
         return(
             <PokemonCard 
-            key={pokemon.id}
+            colorPokemon={colorsCard(pokemon.data.types[0].type.name)}
+            key={index}
             id={pokemon.data.id}
             name={pokemon.data.name}
             url={pokemon.request.responseURL}
             type1={pokemon.data.types[0].type.name}
             type2={pokemon.data.types[0].type.name}
-            image={pokemon.data.sprites.front_default} 
+            image={pokemon.data.sprites.other["official-artwork"].front_default} 
             number={pokemon.data.order} 
+            // cardColor={getColors(pokemon.type[0])}
             // cardcolor={colorsCard(pokemon.type[0])}
             />
         )

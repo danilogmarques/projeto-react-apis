@@ -22,7 +22,7 @@ export const Container = styled.div`
     height: 210px;
     left: 0px;
     top: 0px;
-    background: green;
+    background-color: green;
     border-radius: 12px;
     
 `;
@@ -138,9 +138,9 @@ export const Poison = styled.div`
 
 export const Pokemon = styled.img`
     position: absolute;
-    width: 300px;
-    height: 300px;
-    left: 200px;
+    width: 200px;
+    height: 200px;
+    left: 250px;
     top: -100px;
     /* z-index: 3; */
     object-fit: cover;

@@ -1,8 +1,8 @@
 
 
-export const goToPokedexPage = (navigate, set) => {
+export const goToPokedexPage = (navigate) => {
     navigate('/pokedex')
-    set(2);
+    
 };
     
 export const goToDetailsPage = (navigate, id) => {
@@ -11,9 +11,8 @@ export const goToDetailsPage = (navigate, id) => {
 };
 
 
-export const goToListPage = (navigate, set) => {
+export const goToListPage = (navigate) => {
     navigate('/');
-    set(3)
 };
 
 
