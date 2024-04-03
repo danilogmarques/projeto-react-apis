@@ -24,7 +24,7 @@ export function PokemonsListPage() {
     const cardScreen = pokemons.map((pokemon, index)=>{
         return(
             <PokemonCard 
-            colorPokemon={colorsCard(pokemon.data.types[0].type.name)}
+            type={colorsCard(pokemon.data.types[0].type.name)}
             key={index}
             id={pokemon.data.id}
             name={pokemon.data.name}
@@ -36,8 +36,10 @@ export function PokemonsListPage() {
             // cardColor={getColors(pokemon.type[0])}
             // cardcolor={colorsCard(pokemon.type[0])}
             />
-        )
-    })
+        );
+    });
+
+    console.log(pokemons)
 
     
 

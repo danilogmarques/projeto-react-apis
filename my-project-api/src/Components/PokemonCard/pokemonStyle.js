@@ -22,7 +22,7 @@ export const Container = styled.div`
     height: 210px;
     left: 0px;
     top: 0px;
-    background-color: green;
+    background-color: ${(props) => props.type };
     border-radius: 12px;
     
 `;
@@ -46,9 +46,10 @@ export const Capturar = styled.button`
 export const Detalhes = styled.button`
     position: absolute;
     top: 150px;
-    left: 0px;
+    left: 10px;
     width: 146px;
     height: 38px;
+    border-radius: 8px;
     
 
 

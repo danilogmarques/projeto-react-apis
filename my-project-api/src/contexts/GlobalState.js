@@ -30,29 +30,17 @@ export const GlobalState = (props) => {
         })
     };
 
-   
+    const addPokemon = (pokemon) => {
+        setPokedex([...pokedex, pokemon]);
+    };
+
+    const removePokemon = (pokeName) => {
+        setPokedex(pokedex.filter((poke) => poke.name !== pokeName));
+    };
     
 
 
-    const addToPokedex = (name) => {
-        const arrayPokedex = [ ...pokedex ]
-        const found = arrayPokedex.find(element => element.name === name);
-
-        if(!found){
-            arrayPokedex.push({name})
-        }
-
-        setPokedex(arrayPokedex);
-    }
-
-    console.log(pokedex)
-
     
-    
-    const removeFromPokedex = (name) => {
-        const newPokedex = pokedex.filter(element => element.name !== name );
-        setPokedex(newPokedex);
-    }
 
     // const colorsCard = (type1) => {
     //     switch(type1) {
@@ -80,12 +68,13 @@ export const GlobalState = (props) => {
 
 
       const data = {
-          pokemons, 
-          addToPokedex,
-          removeFromPokedex,
-          pokedex
+          pokedex, 
+          addPokemon,
+          setPokedex,
+          pokemons,
+          removePokemon
 
-      }
+      };
       
       return(
           <GlobalContext.Provider value={data}>

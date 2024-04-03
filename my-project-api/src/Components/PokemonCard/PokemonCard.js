@@ -4,13 +4,13 @@ import { Container, Detalhes, Capturar, Titulo, Numero, Poison, Glass, Pokemon }
 import { goToDetailsPage } from "../../router/Codinator";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { useContext } from "react";
+import { colorsCard } from "../../utils/ReturnCardColor";
 
 
 
 
 
-
-export function PokemonCard({name, number, image, url, type1, colorPokemon, id}) {
+export function PokemonCard({name, number, image, url, type1, type, id}) {
 
     // const [card, setCard] = useState(1)
     
@@ -30,7 +30,7 @@ export function PokemonCard({name, number, image, url, type1, colorPokemon, id})
 
     return (
 
-        <Container color={colorPokemon}>
+        <Container type={type}>
             <Titulo>{name}</Titulo>
             <Numero>{number}</Numero>
             <Glass>{type1}</Glass>
