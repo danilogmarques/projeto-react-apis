@@ -33,7 +33,7 @@ export function PokemonCard({name, number, image, url, type1, type, id}) {
                 {location.pathname === "/" ? (
                     <Capturar onClick={() => { addPokemon(url)}}>Capturar</Capturar>
                 ) : (
-                    <Capturar onClick={() =>{ removePokemon(url)}}>Excluir</Capturar>
+                    <Capturar onClick={() =>{ removePokemon(name)}}>Excluir</Capturar>
                 )}
             </div>
         </Container>

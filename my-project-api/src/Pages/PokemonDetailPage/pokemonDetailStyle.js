@@ -1,23 +1,26 @@
 import styled from "styled-components";
 
 export const Fundo = styled.div`
-        position: relative;
+        display: flex ;
+        justify-content: center;    
+        /* align-items: center; */
+        /* position: relative; */
         width: 100vw;
-        height: 100vh;
+        height: 80vh;
         background-color: #5E5E5E;
 `;
 
 
 export const Corpo = styled.div`
     position: relative;
-    width: 1389.14px;
-    height: 663px;
+    width: 100vw;
+    height: 60vh;
     left: 0px;
     top: 0px;
-
     background: #729F92;
     border-radius: 37.8857px;
-`;
+    `;
+
 
 
 export const BaseStatus = styled.h3`
@@ -26,22 +29,21 @@ export const BaseStatus = styled.h3`
     height: 613px;
     left: 360px;
     top: 24px;
-
     background: #FFFFFF;
     border-radius: 12px;
-`;
+    `;
+
 
 export const Status = styled.div`
     position: absolute;
     width: 343px;
-    height: 613px;
+    height: 60vh;
     left: 360px;
     top: 24px;
-
-
-
+    margin-right: 20px;
     background: #FFFFFF;
     border-radius: 12px;
+    padding: 16px;
 `;
 
 export const Itens = styled.p`
@@ -102,16 +104,13 @@ export const Name = styled.h1`
     height: 58px;
     left: 771px;
     top: 39px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
     line-height: 58px;
-
     color: #FFFFFF;
     `;
-
 export const Poison = styled.h5`
     display: flex;
     flex-direction: row;
@@ -136,13 +135,11 @@ export const Glass = styled.h5`
     align-items: flex-start;
     padding: 5px 8px;
     gap: 17px;
-
     position: absolute;
     width: 99px;
     height: 31px;
     left: 774px;
     top: 107px;
-
     background: #AD61AE;
     border: 1px dashed rgba(255, 255, 255, 0.47);
     border-radius: 8px;  
@@ -151,38 +148,56 @@ export const Glass = styled.h5`
 export const Moves = styled.div`
     position: absolute;
     width: 292px;
-    height: 453px;
+    height: 40vh;
     left: 771px;
     top: 184px;
+    padding: 16px;
 
     background: #FFFFFF;
     border-radius: 8px;
+
 `;
-
 export const FirstCard = styled.div`
-    position: absolute;
-    width: 282px;
-    height: 282px;
-    left: 44px;
-    top: 26px;
-
+    display: flex ;
+    margin-left: 40px;
+    width: 20vw;
+    height: 20vh;
     background: url(image.png), #FFFFFF;
     border: 2px solid #FFFFFF;
     border-radius: 8px;
-`;
+    `;
+
 
 export const SecondCard = styled.div`
-    position: absolute;
-    width: 282px;
-    height: 282px;
-    left: 44px;
-    top: 355px;
-
+    display: flex ;
+    margin-left: 40px;
+    width: 20vw;
+    height: 20vh;
     background: url(image.png), #FFFFFF;
     border: 2px solid #FFFFFF;
-    border-radius: 8px;    
-`;
+    border-radius: 8px;
+    `;
+
 
 export const Image = styled.img`
     width: 40vh;
 `
+export const ContainerImage = styled.div`
+    display: flex ;
+    width: 40vh;
+    height: 20vh;
+    flex-direction: column;
+    padding: 18px;
+    gap: 30px;
+    /* border-style: solid; */
+    /* border-color: #FFFFFF; */
+    /* border-radius: 12px; */
+    /* background: #729F92; */
+    /* justify-content: center;     */
+    /* align-items: center; */
+    `;
+
+
+
+
+

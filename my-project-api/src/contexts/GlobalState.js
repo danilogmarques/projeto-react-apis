@@ -30,9 +30,9 @@ export const GlobalState = (props) => {
         setPokedex([...pokedex, pokemon]);
     };
 
-    const removePokemon = (pokeName) => {
-        setPokedex(pokedex.filter((poke) => poke.name !== pokeName));
-    };
+   const removePokemon = (pokeId) => {
+    setPokedex(pokedex.filter((poke) => poke.id !== pokeId));
+};
     
     const data = {
           pokedex, 

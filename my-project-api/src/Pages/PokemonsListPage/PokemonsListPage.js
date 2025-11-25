@@ -6,10 +6,6 @@ import { useContext } from "react";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { colorsCard } from "../../utils/ReturnCardColor";
 
-
- 
-
-
 export function PokemonsListPage() {
 
     const context = useContext(GlobalContext);
@@ -72,5 +68,9 @@ export function PokemonsListPage() {
 
 
 
+
+
+
+ 
 
 
