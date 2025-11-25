@@ -14,13 +14,8 @@ export function PokemonsListPage() {
 
     const context = useContext(GlobalContext);
 
-
     const { pokemons } = context;
 
-   
-  
-
-    
     const cardScreen = pokemons.map((pokemon, index)=>{
         return(
             <PokemonCard 
@@ -39,10 +34,6 @@ export function PokemonsListPage() {
         );
     });
 
-    console.log(pokemons)
-
-    
-
     return (
     <>
         <Header />
@@ -52,117 +43,6 @@ export function PokemonsListPage() {
     </>
     )
 };
-
-    
-
-
-
-    
-   
-
-    
-
-    // const getPokemons = async () => {
-
-    //     const urlPokemons = pokemons.length;
-    //     const endPoints = [];
-
-    // for (let i = 0; i < urlPokemons; i++) {
-    //     const url = (pokemons[i].url);
-    //     endPoints.push('https://pokeapi.co/api/v2/pokemon/${i}')
-    //     console.log(endPoints)
-    //     // const newArray = [...arrayUrl, url]
-    //     // console.log(newArray);
-    // }
-
-    //     try {
-    //         const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=30')
-    //         setPokemons(response.data.results)
-    //     } catch (error) {
-    //         console.log(error.response);
-            
-    //     };
-    // }
-
-    
-
-
-    // console.log(pokemons)
-
-    
-        
-        
-       
-
-    
-
-  
-        
-        
-        
-        
-        
-        
-        
-
-    
-
-    
-    // const newArray = pokemons.map((pokemon)=>{
-    //     const url = (pokemon.url);
-    //     const newArray = [...arrayUrl, url]
-    //     console.log(newArray);
-    //    });
-        
-
-        
-        
-    
-
-        
-
-    
-    
-    
-        
-    
-    
-    
-
-        
-       
-
-    
-    
-        
-        
-
-
-
-    
-
-        
-            
-
-        
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

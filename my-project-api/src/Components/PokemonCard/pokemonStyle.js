@@ -16,7 +16,6 @@ export const Pai = styled.div`
 
 export const Container = styled.div`
     
-    
     position: relative;
     width: 440px;
     height: 210px;
@@ -24,6 +23,8 @@ export const Container = styled.div`
     top: 0px;
     background-color: ${(props) => props.type };
     border-radius: 12px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
     
 `;
 

@@ -12,21 +12,13 @@ import { colorsCard } from "../../utils/ReturnCardColor";
 
 export function PokemonCard({name, number, image, url, type1, type, id}) {
 
-    // const [card, setCard] = useState(1)
-    
-
     const navigate = useNavigate();
 
     const context = useContext(GlobalContext);
 
-    const { addToPokedex, removeFromPokedex } = context;
+    const { addPokemon, removePokemon } = context;
 
     const location = useLocation()
-
-   
-    
-
-
 
     return (
 
@@ -39,14 +31,19 @@ export function PokemonCard({name, number, image, url, type1, type, id}) {
             <Pokemon alt={name} src={image} />
             <div>
                 {location.pathname === "/" ? (
-                    <Capturar onClick={() => { addToPokedex(name)}}>Capturar</Capturar>
+                    <Capturar onClick={() => { addPokemon(url)}}>Capturar</Capturar>
                 ) : (
-                    <Capturar onClick={() =>{ removeFromPokedex(name)}}>Excluir</Capturar>
+                    <Capturar onClick={() =>{ removePokemon(url)}}>Excluir</Capturar>
                 )}
             </div>
         </Container>
-    )
+)
 };
+    
+   
+
+
+
 
 
 
