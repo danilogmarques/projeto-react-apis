@@ -6,55 +6,48 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 import { useContext } from "react";
 import { colorsCard } from "../../utils/ReturnCardColor";
 
-
-
-
-
-export function PokemonCard({name, number, image, url, type1, type, id}) {
+export function PokemonCard({ name, number, image, url, type1, type, id }) {
 
     const navigate = useNavigate();
-
     const context = useContext(GlobalContext);
-
     const { addPokemon, removePokemon } = context;
+    const location = useLocation();
 
-    const location = useLocation()
+    const handleAddPokemon = () => {
+        addPokemon({
+            id,
+            name,
+            image,
+            type1,
+            url
+        });
+    };
+
+    const handleRemovePokemon = () => {
+        removePokemon(id);
+    };
 
     return (
-
         <Container type={type}>
             <Titulo>{name}</Titulo>
             <Numero>{number}</Numero>
             <Glass>{type1}</Glass>
             <Poison>{type1}</Poison>
-            <Detalhes onClick={() => { goToDetailsPage(navigate, id, url) }}>Detalhes</Detalhes>
+            <Detalhes onClick={() => goToDetailsPage(navigate, id, url)}>
+                Detalhes
+            </Detalhes>
             <Pokemon alt={name} src={image} />
             <div>
                 {location.pathname === "/" ? (
-                    <Capturar onClick={() => { addPokemon(url)}}>Capturar</Capturar>
+                    <Capturar onClick={handleAddPokemon}>
+                        Capturar
+                    </Capturar>
                 ) : (
-                    <Capturar onClick={() =>{ removePokemon(name)}}>Excluir</Capturar>
+                    <Capturar onClick={handleRemovePokemon}>
+                        Excluir
+                    </Capturar>
                 )}
             </div>
         </Container>
-)
-};
-    
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    );
+}
