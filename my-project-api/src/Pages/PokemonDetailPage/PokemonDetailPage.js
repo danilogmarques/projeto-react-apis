@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Header } from "../../Components/Header/Header";
 import {
     Corpo,
@@ -7,18 +7,14 @@ import {
     Number,
     Name,
     Poison,
-    Glass,
     Moves,
     FirstCard,
     SecondCard,
-    Itens,
     Text,
     Fundo,
     Image,
     ContainerImage
 } from "./pokemonDetailStyle";
-import { useContext } from "react";
-import { GlobalContext } from "../../contexts/GlobalContext";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
@@ -26,31 +22,24 @@ import { useEffect } from "react";
 
 export function PokemonDetailPage() {
 
-    const context = useContext(GlobalContext);
-
-    const { pokemons } = context;
-
     const { id } = useParams();
 
     const [pokemonDetails, setPokemonDetails] = useState([])
 
-    useEffect(() => {
-
-        getPokemons();
-    }, []);
-
-
-    const getPokemons = async () => {
+    const getPokemons = useCallback(async () => {
         const endpoints = [];
-        {
-            endpoints.push(`https://pokeapi.co/api/v2/pokemon/${id}/`);
-        }
-        axios.all(endpoints.map((endpoints) => axios.get(endpoints)))
+        endpoints.push(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+        axios.all(endpoints.map((endpoint) => axios.get(endpoint)))
             .then((response) => setPokemonDetails(response))
             .catch((erro) => {
                 console.log(erro.response)
             })
-    };
+    }, [id]);
+
+    useEffect(() => {
+
+        getPokemons();
+    }, [getPokemons]);
 
     return (
         <div>

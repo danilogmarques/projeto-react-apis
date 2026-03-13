@@ -12,14 +12,22 @@ export const GlobalState = (props) => {
     
     useEffect(() => {
         getPokemons();
+        const savedPokedex = localStorage.getItem('pokedex');
+        if (savedPokedex) {
+            setPokedex(JSON.parse(savedPokedex));
+        }
     },[]);
+
+    useEffect(() => {
+        localStorage.setItem('pokedex', JSON.stringify(pokedex));
+    }, [pokedex]);
 
     const getPokemons = async () => {
         const endpoints = [];
         for (let i = 1; i < 31; i++ ) {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         }
-        axios.all(endpoints.map((endpoints) => axios.get(endpoints)))
+        axios.all(endpoints.map((endpoint) => axios.get(endpoint)))
         .then((response) => setPokemons(response))
         .catch((erro)=>{
             console.log(erro.response)
@@ -39,7 +47,8 @@ export const GlobalState = (props) => {
           addPokemon,
           setPokedex,
           pokemons,
-          removePokemon
+          removePokemon,
+          removeFromPokedex: removePokemon
         };
         return(
             <GlobalContext.Provider value={data}>

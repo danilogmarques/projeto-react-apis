@@ -12,8 +12,6 @@ export function Header() {
 
     const context = useContext(GlobalContext);
 
-    const { removeFromPokedex } = context;
-
 
     
 

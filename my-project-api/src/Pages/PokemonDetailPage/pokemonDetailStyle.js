@@ -1,49 +1,51 @@
 import styled from "styled-components";
 
 export const Fundo = styled.div`
-        display: flex ;
-        justify-content: center;    
-        /* align-items: center; */
-        /* position: relative; */
-        width: 100vw;
-        height: 80vh;
-        background-color: #5E5E5E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 80vh;
+    background-color: #5E5E5E;
+    padding: 20px;
+    box-sizing: border-box;
 `;
-
 
 export const Corpo = styled.div`
     position: relative;
-    width: 100vw;
-    height: 60vh;
-    left: 0px;
-    top: 0px;
+    max-width: 1200px;
+    width: 100%;
+    height: auto;
+    min-height: 60vh;
     background: #729F92;
     border-radius: 37.8857px;
-    `;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+`;
 
 
 
 export const BaseStatus = styled.h3`
-    position: absolute;
-    width: 543px;
-    height: 613px;
-    left: 360px;
-    top: 24px;
+    width: 100%;
+    max-width: 543px;
+    height: auto;
     background: #FFFFFF;
     border-radius: 12px;
-    `;
-
+    margin: 20px 0;
+    padding: 16px;
+`;
 
 export const Status = styled.div`
-    position: absolute;
-    width: 343px;
-    height: 60vh;
-    left: 360px;
-    top: 24px;
-    margin-right: 20px;
+    width: 100%;
+    max-width: 343px;
+    height: auto;
     background: #FFFFFF;
     border-radius: 12px;
     padding: 16px;
+    margin: 20px 0;
 `;
 
 export const Itens = styled.p`

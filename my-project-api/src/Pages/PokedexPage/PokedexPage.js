@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useCallback } from "react";
 import { Header } from "../../Components/Header/Header";
 import { PokemonCard } from "../../Components/PokemonCard/PokemonCard";
 import { GlobalContext } from "../../contexts/GlobalContext"
@@ -14,11 +14,7 @@ export function PokedexPage() {
     const { pokedex } = context;
     const [data, setData] = useState([]);
 
-    useEffect(() => {
-        getPokedex();
-    }, [pokedex]); // Executa quando pokedex muda
-
-    const getPokedex = async () => {
+    const getPokedex = useCallback(async () => {
         // Se pokedex estiver vazia, não faz requisição
         if (!pokedex || pokedex.length === 0) {
             setData([]);
@@ -40,7 +36,11 @@ export function PokedexPage() {
             .catch((erro) => {
                 console.log(erro.response);
             });
-    };
+    }, [pokedex]);
+
+    useEffect(() => {
+        getPokedex();
+    }, [getPokedex]); // Executa quando getPokedex muda
 
     const found = data.map((pokemon) => (
         <PokemonCard

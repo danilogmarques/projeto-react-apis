@@ -15,35 +15,35 @@ export const Pai = styled.div`
 
 
 export const Container = styled.div`
-    
     position: relative;
-    width: 440px;
+    max-width: 440px;
+    width: 100%;
     height: 210px;
-    left: 0px;
-    top: 0px;
     background-color: ${(props) => props.type };
     border-radius: 12px;
     border: 1px solid #000000;
     box-sizing: border-box;
-    
+    margin: 0 auto;
 `;
 
 export const Capturar = styled.button`
-    
     position: absolute;
     top: 150px;
-    left: 280px;
+    right: 10px;
     width: 146px;
     height: 38px;
     border-radius: 8px;
-    z-index: 2;
-
-    
-
-    
-    
-
+    background-color: #FFFFFF;
+    color: black;
+    border: none;
+    font-weight: 24;
+    font-size: 16px;
+    font-style: normal;
+    font-family: 'Poppins';
+    cursor: pointer;
+    line-height: 24px;
 `;
+
 export const Detalhes = styled.button`
     position: absolute;
     top: 150px;
@@ -51,23 +51,15 @@ export const Detalhes = styled.button`
     width: 146px;
     height: 38px;
     border-radius: 8px;
-    
-
-
-    
-
-    font-family: 'Poppins' ;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 24px;
-
-    text-decoration-line: underline;
-
-    color: black;
     background-color: #FFFFFF;
-
-    
+    color: black;
+    border: none;
+    font-weight: 24;
+    font-size: 16px;
+    font-style: normal;
+    font-family: 'Poppins';
+    cursor: pointer;
+    line-height: 24px;
 `;
 export const Titulo = styled.h1`
     position: absolute;
@@ -142,9 +134,8 @@ export const Pokemon = styled.img`
     position: absolute;
     width: 200px;
     height: 200px;
-    left: 250px;
-    top: -100px;
-    /* z-index: 3; */
+    right: 10px;
+    top: -50px;
     object-fit: cover;
 `;
     

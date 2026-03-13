@@ -4,7 +4,6 @@ import { Container, Detalhes, Capturar, Titulo, Numero, Poison, Glass, Pokemon }
 import { goToDetailsPage } from "../../router/Codinator";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import { useContext } from "react";
-import { colorsCard } from "../../utils/ReturnCardColor";
 
 export function PokemonCard({ name, number, image, url, type1, type, id }) {
 
