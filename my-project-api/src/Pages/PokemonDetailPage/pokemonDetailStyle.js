@@ -1,203 +1,215 @@
 import styled from "styled-components";
 
 export const Fundo = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    min-height: 80vh;
-    background-color: #5E5E5E;
-    padding: 20px;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: radial-gradient(circle at top, #2b2b2b 0%, #0d0d0d 65%);
+  box-sizing: border-box;
 `;
 
 export const Corpo = styled.div`
-    position: relative;
-    max-width: 1200px;
-    width: 100%;
-    height: auto;
-    min-height: 60vh;
-    background: #729F92;
-    border-radius: 37.8857px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
+  width: min(1100px, 100%);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 32px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  overflow: hidden;
 `;
 
-
-
-export const BaseStatus = styled.h3`
-    width: 100%;
-    max-width: 543px;
-    height: auto;
-    background: #FFFFFF;
-    border-radius: 12px;
-    margin: 20px 0;
-    padding: 16px;
+export const HeaderSection = styled.header`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `;
 
-export const Status = styled.div`
-    width: 100%;
-    max-width: 343px;
-    height: auto;
-    background: #FFFFFF;
-    border-radius: 12px;
-    padding: 16px;
-    margin: 20px 0;
+export const TitleRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
 `;
 
-export const Itens = styled.p`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 10px;
-    gap: 10px;
-    
-    position: absolute;
-    width: 45px;
-    height: 37px;
-    left: 814px;
-    top: 712px;
-
-    background: #ECECEC;
-    border: 1px dashed rgba(0, 0, 0, 0.14);
-    border-radius: 12px;
-    `;
-
-export const Text = styled.p`
-    width: 82px;
-    height: 17px;
-
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-
-    color: #000000;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-
-`;
-
-export const Number = styled.h4`
-   position: absolute;
-   width: 30px;
-   height: 19px;
-   left: 774px;
-   top: 24px;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #FFFFFF;
+export const Number = styled.p`
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.65);
 `;
 
 export const Name = styled.h1`
-    position: absolute;
-    width: 238px;
-    height: 58px;
-    left: 771px;
-    top: 39px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 58px;
-    color: #FFFFFF;
-    `;
-export const Poison = styled.h5`
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 5px 8px;
-    gap: 17px;
-
-    position: absolute;
-    width: 91px;
-    height: 31px;
-    left: 891px;
-    top: 106px;
-
-    background: #70B873;
-    border: 1px dashed rgba(255, 255, 255, 0.47);
-    border-radius: 8px;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1;
+  text-transform: capitalize;
+  color: #1b1b1b;
 `;
 
-export const Glass = styled.h5`
+export const TypeBadges = styled.div`
   display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 5px 8px;
-    gap: 17px;
-    position: absolute;
-    width: 99px;
-    height: 31px;
-    left: 774px;
-    top: 107px;
-    background: #AD61AE;
-    border: 1px dashed rgba(255, 255, 255, 0.47);
-    border-radius: 8px;  
+  flex-wrap: wrap;
+  gap: 12px;
 `;
 
-export const Moves = styled.div`
-    position: absolute;
-    width: 292px;
-    height: 40vh;
-    left: 771px;
-    top: 184px;
-    padding: 16px;
-
-    background: #FFFFFF;
-    border-radius: 8px;
-
+export const TypeBadge = styled.span`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  background: ${(props) => props.$bg || "#8a8a8a"};
+  text-transform: capitalize;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.12);
 `;
-export const FirstCard = styled.div`
-    display: flex ;
-    margin-left: 40px;
-    width: 20vw;
-    height: 20vh;
-    background: url(image.png), #FFFFFF;
-    border: 2px solid #FFFFFF;
-    border-radius: 8px;
-    `;
 
+export const Content = styled.div`
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) 1fr;
+  gap: 28px;
+  align-items: start;
 
-export const SecondCard = styled.div`
-    display: flex ;
-    margin-left: 40px;
-    width: 20vw;
-    height: 20vh;
-    background: url(image.png), #FFFFFF;
-    border: 2px solid #FFFFFF;
-    border-radius: 8px;
-    `;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+`;
 
+export const ImageColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+`;
 
-export const Image = styled.img`
-    width: 40vh;
-`
-export const ContainerImage = styled.div`
-    display: flex ;
-    width: 40vh;
-    height: 20vh;
-    flex-direction: column;
-    padding: 18px;
-    gap: 30px;
-    /* border-style: solid; */
-    /* border-color: #FFFFFF; */
-    /* border-radius: 12px; */
-    /* background: #729F92; */
-    /* justify-content: center;     */
-    /* align-items: center; */
-    `;
+export const ImageCard = styled.div`
+  width: 100%;
+  min-height: 240px;
+  border-radius: 28px;
+  background: radial-gradient(100% 100% at top, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.75));
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+`;
+
+export const StatsCard = styled.div`
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+`;
+
+export const StatsTitle = styled.h2`
+  margin: 0 0 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #1b1b1b;
+`;
+
+export const StatRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 70px;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+`;
+
+export const StatLabel = styled.span`
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #2b2b2b;
+  text-transform: capitalize;
+`;
+
+export const StatValue = styled.span`
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #2b2b2b;
+  text-align: right;
+`;
+
+export const StatBar = styled.div`
+  position: relative;
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-top: 6px;
+`;
+
+export const StatBarFill = styled.div`
+  height: 100%;
+  border-radius: 999px;
+  background: ${(props) => props.$bg || "#33a4f5"};
+  width: ${(props) => props.$width ?? 0}%;
+  transition: width 0.35s ease;
+`;
+
+export const MovesCard = styled.div`
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+`;
+
+export const MovesTitle = styled.h2`
+  margin: 0 0 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #1b1b1b;
+`;
+
+export const MoveList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+`;
+
+export const MoveItem = styled.li`
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #1b1b1b;
+`;
+
 
 
 
